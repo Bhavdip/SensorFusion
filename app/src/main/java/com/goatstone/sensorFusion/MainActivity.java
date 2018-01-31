@@ -60,11 +60,11 @@ public class MainActivity extends Activity
     sensorFusion = new SensorFusion();
     sensorFusion.setMode(SensorFusion.Mode.ACC_MAG);
 
-    bubbleLevelCompass = (BubbleLevelCompass) this.findViewById(R.id.SensorFusionView);
-    setModeRadioGroup = (RadioGroup) findViewById(R.id.radioGroup1);
-    azimuthText = (TextView) findViewById(R.id.azmuth);
-    pithText = (TextView) findViewById(R.id.pitch);
-    rollText = (TextView) findViewById(R.id.roll);
+    bubbleLevelCompass = this.findViewById(R.id.SensorFusionView);
+    setModeRadioGroup = findViewById(R.id.radioGroup1);
+    azimuthText = findViewById(R.id.azmuth);
+    pithText = findViewById(R.id.pitch);
+    rollText = findViewById(R.id.roll);
     setModeRadioGroup.setOnCheckedChangeListener(this);
   }
 
