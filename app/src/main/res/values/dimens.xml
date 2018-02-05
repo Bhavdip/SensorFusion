@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="compass_base_radius">100dp</dimen>
+    <dimen name="compass_main_fontsize">15dp</dimen>
+    <dimen name="compass_sub_fontsize">9dp</dimen>
+    <dimen name="compass_dot_radius">1.5dp</dimen>
+    <dimen name="compass_outer_circle_strokewidth">1.5dp</dimen>
+    <dimen name="compass_center_radius">3dp</dimen>
+    <dimen name="compass_needle_length">80dp</dimen>
+    <dimen name="compass_needle_width">12dp</dimen>
+</resources>

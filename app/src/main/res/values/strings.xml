@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">SensorFusion</string>
+  <string name="direction_n">N</string>
+  <string name="direction_e">E</string>
+  <string name="direction_s">S</string>
+  <string name="direction_w">W</string>
 </resources>
