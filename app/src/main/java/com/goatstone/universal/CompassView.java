@@ -13,7 +13,7 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.goatstone.sensorFusion.R;
+import com.goatstone.R;
 
 import java.util.ArrayList;
 

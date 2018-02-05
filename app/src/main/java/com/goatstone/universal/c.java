@@ -17,7 +17,7 @@ class c implements aj {
     public void a(Location location) {
         if (location != null) {
             if (!this.a.j) {
-                this.a.a((CompassLocation) location);
+                this.a.a(location);
             }
             location.setTime(System.currentTimeMillis());
             this.a.a = location;

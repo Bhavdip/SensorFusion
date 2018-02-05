@@ -10,8 +10,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-import com.goatstone.sensorFusion.R;
+import com.goatstone.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,7 +58,8 @@ public class CompassFragment extends Fragment {
         while (i >= 360) {
             i -= 360;
         }
-        Log.d("tag",new StringBuilder(String.valueOf(i)).append("°").toString());
+        Log.d("tag", new StringBuilder(String.valueOf(i)).append("°").toString());
+        ((TextView) (getView().findViewById(R.id.textViewBearing))).setText(new StringBuilder(String.valueOf(i)).append("°").toString());
     }
 
     public void a(Location location) {
@@ -178,7 +180,7 @@ public class CompassFragment extends Fragment {
     public void b(CompassLocation compassLocation) {
         this.f.remove(compassLocation);
         this.g.remove(Long.valueOf(compassLocation.a()));
-      //  this.c.notifyDataSetChanged();
+        //  this.c.notifyDataSetChanged();
     }
 
     @Override
@@ -195,12 +197,13 @@ public class CompassFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.compass_fragment, container, false);
-        //this.b = (CompassView) inflate.findViewById(R.id.compass_fragment_compassview);
-        //this.b.a(this.f);
-        return inflate;
+        View view = inflater.inflate(R.layout.compass_fragment, container, false);
+        this.b = view.findViewById(R.id.compass_fragment_compassview);
+        this.b.a(this.f);
+        return view;
     }
 
+    @Override
     public void onStart() {
         super.onStart();
         this.j = false;
@@ -211,6 +214,7 @@ public class CompassFragment extends Fragment {
         e();
     }
 
+    @Override
     public void onStop() {
         super.onStop();
         this.d.b();

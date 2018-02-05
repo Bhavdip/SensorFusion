@@ -6,7 +6,7 @@ package com.goatstone.universal;
 
 
 class b implements Runnable {
-    final /* synthetic */ CompassFragment a;
+    final CompassFragment a;
 
     b(CompassFragment compassFragment) {
         this.a = compassFragment;

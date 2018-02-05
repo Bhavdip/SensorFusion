@@ -4,4 +4,5 @@
   <string name="direction_e">E</string>
   <string name="direction_s">S</string>
   <string name="direction_w">W</string>
+  <string name="tag_compass_fragment">tag_compass_fragment</string>
 </resources>

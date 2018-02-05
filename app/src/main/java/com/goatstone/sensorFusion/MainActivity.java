@@ -30,10 +30,9 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-
 import com.goatstone.util.SensorFusion;
-
 import java.text.DecimalFormat;
+import com.goatstone.R;
 
 public class MainActivity extends Activity
     implements SensorEventListener, RadioGroup.OnCheckedChangeListener {
