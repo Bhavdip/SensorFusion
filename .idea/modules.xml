@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/SensorFusion.iml" filepath="$PROJECT_DIR$/SensorFusion.iml" />
       <module fileurl="file://$PROJECT_DIR$/SensorFusionCompass.iml" filepath="$PROJECT_DIR$/SensorFusionCompass.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
