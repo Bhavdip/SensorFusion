@@ -19,6 +19,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
 
+import static com.goatstone.universal.LatLong.LATITUDE;
+import static com.goatstone.universal.LatLong.LONGITUDE;
+
 /**
  * Created by bhavdip on 2/5/18.
  */
@@ -118,7 +121,18 @@ public class CompassFragment extends Fragment {
   }
 
   public void updateLocationInfoUI() {
-
+    if (this.mLocation != null) {
+      ((TextView) getView().findViewById(R.id.textViewLat)).setText(
+          formatLocationValue(this.mLocation.getLatitude(), LATITUDE, Measure.DECIMAL));
+      ((TextView) getView().findViewById(R.id.textViewLang)).setText(
+          formatLocationValue(this.mLocation.getLatitude(), LONGITUDE, Measure.DECIMAL));
+      ((TextView) getView().findViewById(R.id.textViewProvider)).setText(
+          this.mLocation.getProvider() != null ? this.mLocation.getProvider()
+              : getString(R.string.na));
+      ((TextView) getView().findViewById(R.id.textViewTimeFormat)).setText(
+          String.format(getString(R.string.formatstring_time_seconds),
+              Math.round((float) ((System.currentTimeMillis() - this.mLocation.getTime()) / 1000))));
+    }
   }
 
   public void distanceCalculation() {
@@ -187,8 +201,22 @@ public class CompassFragment extends Fragment {
   @Override
   public void onStop() {
     super.onStop();
-    this.mLocHelper.b();
+    this.mLocHelper.cleanUpLocation();
     this.mCompassHelper.stopListen();
     this.handler.removeCallbacks(this.infoUpdate);
+  }
+
+  public String formatLocationValue(double d, LatLong latLong, Measure measure) {
+    String str = "";
+    if (measure == Measure.DECIMAL) {
+      return String.format(getString(R.string.formatstring_coordinate_decimal), d);
+    }
+    Number[] a = CompassLocation.a(d);
+    str = "";
+    str = latLong == LATITUDE ? a[3].intValue() == 1 ? getString(R.string.direction_n)
+        : getString(R.string.direction_s)
+        : a[3].intValue() == 1 ? getString(R.string.direction_e) : getString(R.string.direction_w);
+    return String.format(getString(R.string.formatstring_coordinate_dms), a[0].intValue(),
+        a[1].intValue(), a[2].doubleValue(), str);
   }
 }

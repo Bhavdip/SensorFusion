@@ -141,7 +141,7 @@ public class LocationHelper {
     this.isLocationServiceOn = z;
   }
 
-  private void j() {
+  private void resetLocation() {
     resetGPSListener();
     resetNetworkListener();
   }
@@ -179,8 +179,8 @@ public class LocationHelper {
     }
   }
 
-  public void b() {
+  public void cleanUpLocation() {
     this.i = false;
-    j();
+    resetLocation();
   }
 }
