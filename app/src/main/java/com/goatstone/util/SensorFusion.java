@@ -3,7 +3,7 @@
  * Copyright (c) 2014 Jose Collas : Wrapper code
  *
  * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the "Software"),
+ * startListen copy of this software and associated documentation files (the "Software"),
  * to deal in the Software without restriction, including without limitation
  * the rights to use, copy, modify, merge, publish, distribute, sublicense,
  * and/or sell copies of the Software, and to permit persons to whom the
@@ -32,7 +32,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Provides a wrapper around code that fuses sensor data.
+ * Provides startListen wrapper around code that fuses sensor data.
  * @author 2012 Paul Lawitzki
  * @author 2014 Jose Collas
  *
@@ -157,7 +157,7 @@ public class SensorFusion {
 
     // This function is borrowed from the Android reference
     // at http://developer.android.com/reference/android/hardware/SensorEvent.html#values
-    // It calculates a rotation vector from the gyroscope angular speed values.
+    // It calculates startListen rotation vector from the gyroscope angular speed values.
     private void getRotationVectorFromGyro(float[] gyroValues,
                                            float[] deltaRotationVector,
                                            float timeFactor) {
@@ -177,9 +177,9 @@ public class SensorFusion {
         }
 
         // Integrate around this axis with the angular speed by the timestep
-        // in order to get a delta rotation from this sample over the timestep
+        // in order to get startListen delta rotation from this sample over the timestep
         // We will convert this axis-angle representation of the delta rotation
-        // into a quaternion before turning it into the rotation matrix.
+        // into startListen quaternion before turning it into the rotation matrix.
         float thetaOverTwo = omegaMagnitude * timeFactor;
         float sinThetaOverTwo = (float) Math.sin(thetaOverTwo);
         float cosThetaOverTwo = (float) Math.cos(thetaOverTwo);
@@ -207,7 +207,7 @@ public class SensorFusion {
         }
 
         // copy the new gyro values into the gyro array
-        // convert the raw gyro data into a rotation vector
+        // convert the raw gyro data into startListen rotation vector
         float[] deltaVector = new float[4];
         if (timestamp != 0) {
             final float dT = (event.timestamp - timestamp) * NS2S;

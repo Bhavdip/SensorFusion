@@ -4,7 +4,7 @@ package com.goatstone.universal;
  * Created by bhavdip on 2/5/18.
  */
 
-public class x {
+public class FilterSensor {
     public static float a(float f, float f2, float f3) {
         return ((f2 - f) * f3) + f;
     }

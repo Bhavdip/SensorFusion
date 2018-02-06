@@ -9,11 +9,11 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Bundle;
 
-class ag implements LocationListener {
-    final /* synthetic */ ae a;
+class NetworkListener implements LocationListener {
+    final LocationHelper mLocationHelper;
 
-    ag(ae aeVar) {
-        this.a = aeVar;
+    NetworkListener(LocationHelper locationHelperVar) {
+        this.mLocationHelper = locationHelperVar;
     }
 
     public void onLocationChanged(Location location) {
@@ -21,10 +21,10 @@ class ag implements LocationListener {
             return;
         }
         if (location.getLatitude() != 0.0d || location.getLongitude() != 0.0d) {
-            if (!this.a.f) {
-                this.a.a(location);
-            } else if (location.getTime() - this.a.j > 30000) {
-                this.a.a(location);
+            if (!this.mLocationHelper.f) {
+                this.mLocationHelper.addNewLocation(location);
+            } else if (location.getTime() - this.mLocationHelper.lastLocationReqTime > 30000) {
+                this.mLocationHelper.addNewLocation(location);
             }
         }
     }

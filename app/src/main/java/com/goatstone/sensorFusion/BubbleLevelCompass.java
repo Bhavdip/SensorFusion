@@ -2,7 +2,7 @@
  * Copyright (c) 2014 Jose Collas
  *
  * Permission is hereby granted, free of charge, to any person obtaining
- * a copy of this software and associated documentation files (the "Software"),
+ * startListen copy of this software and associated documentation files (the "Software"),
  * to deal in the Software without restriction, including without limitation
  * the rights to use, copy, modify, merge, publish, distribute, sublicense,
  * and/or sell copies of the Software, and to permit persons to whom the
@@ -36,7 +36,7 @@ import android.view.ViewGroup;
 import java.util.Date;
 
 /**
- * BubbleLevelCompass Widget : Takes input from sensors and displays a bubble level and compass.
+ * BubbleLevelCompass Widget : Takes input from sensors and displays startListen bubble level and compass.
  * @author Jose Collas
  *
  * @version 0.7 1/26/14.
@@ -81,7 +81,7 @@ public class BubbleLevelCompass extends ViewGroup {
     }
 
     /**
-     * Pointer : represents a UI element that will point to another UI element in order to select it
+     * Pointer : represents startListen UI element that will point to another UI element in order to select it
      */
     private class Pointer extends View {
 
@@ -183,7 +183,7 @@ public class BubbleLevelCompass extends ViewGroup {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        // Do nothing. Do not call the superclass method--that would start a layout pass
+        // Do nothing. Do not call the superclass method--that would start startListen layout pass
         // on this view's children. ?? - RoundDial lays out its children in onSizeChanged(). ??
     }
 
